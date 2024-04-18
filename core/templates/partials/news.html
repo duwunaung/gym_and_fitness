@@ -1,0 +1,58 @@
+{% load static %}
+
+<section id="news" class="container p-5">
+    <div
+        class="sub-heading"
+        data-aos="fade-down"
+        data-aos-duration="1000"
+    >
+        RECENT BLOGS
+    </div>
+    <div
+        class="main-heading"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+    >
+        Our Latest News
+    </div>
+    <div
+        class="heading-line"
+        data-aos="fade-down"
+        data-aos-duration="1000"
+    ></div>
+
+    <div class="row gy-2">
+        
+        {% for single_news in news %}
+        <div
+            class="col-lg-4 col-md-6"
+            data-aos= {% if forloop.counter == 1 %} "fade-up-right"  {% elif forloop.counter == 2 %} "zoom-out" {% else %} "fade-up-left" {% endif %} 
+            data-aos-duration="1000"
+        >
+            <div class="card bg-dark text-light">
+                <div class="card-header">
+                    <img src="{{ single_news.image.url }}" />
+                </div>
+                <div class="card-body">
+                    <h6 class="text-warning">{{ single_news.category }}</h6>
+                    <h5>{{ single_news.title }}</h5>
+                    <p>
+                        {{ single_news.description }}
+                    </p>
+
+                    <div>
+                        <span
+                            ><i class="bi bi-stopwatch"></i> {{ single_news.duration }}m |
+                            {{ single_news.author }}</span
+                        >
+
+                        <span class="float-end"
+                            ><i class="bi bi-chat"></i> {{ single_news.comment_count }}</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

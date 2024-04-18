@@ -1,0 +1,23 @@
+{% load static %}
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+        <meta />
+        <title>{% block title %}{% endblock  %}</title>
+
+        {% block css_files %}
+        {% endblock  %}
+
+    </head>
+    <body>
+        {% block content %}{% endblock  %}
+        <!-- End of Register's Offcanvas Section -->
+        {% block scripts %}{% endblock  %}
+    </body>
+</html>

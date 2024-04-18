@@ -1,0 +1,61 @@
+{% load static %}
+
+<section id="service" class="container p-5">
+    <div
+        class="sub-heading"
+        data-aos="fade-down"
+        data-aos-duration="1000"
+    >
+        OUR SERVICES
+    </div>
+    <div
+        class="main-heading"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+    >
+        What We Offer
+    </div>
+    <div
+        class="heading-line"
+        data-aos="fade-down"
+        data-aos-duration="1000"
+    ></div>
+
+    <div class="row">
+        <div
+            class="col-md-5"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+        >
+            <img
+                src="{% static 'assets/serviceimg1.webp' %}"
+                class="img-fluid rounded-1"
+                style="max-height: 550px; width: 400px"
+            />
+        </div>
+        <div class="col-md-7">
+            {% for service in services %}
+                <div
+                    class="card service-card overflow-hidden bg-dark my-2"
+                    data-aos="fade-down-left"
+                    data-aos-duration="1000"
+                >
+                    <div class="row">
+                        <div class="col-md-7 text-center text-light">
+                            <h5>{{ service.title }}</h5>
+                            <p class="p-3">
+                                {{ service.description }}
+                            </p>
+                        </div>
+                        <div class="col-md-5">
+                            <img
+                            src="{{ service.image.url }}"
+                                class="border border-3 border-danger"
+                            />
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

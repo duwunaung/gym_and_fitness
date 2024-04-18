@@ -1,0 +1,18 @@
+<section id="faq" class="container p-5">
+  <div class="sub-heading" data-aos="fade-down">FREQUENTLY ASKED QUESTION</div>
+  <div class="main-heading" data-aos="fade-up">FAQ</div>
+  <div class="heading-line" data-aos="fade-down"></div>
+
+  <div class="accordion" id="accordionExample" data-aos="zoom-in">
+    {% for faq in faqs %}
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne"><button class="accordion-button {% if forloop.counter != 1%}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{forloop.counter}}" aria-expanded="{% if forloop.counter == 1 %} true {% else %} false {% endif%}" aria-controls="collapse{{forloop.counter}}">Question {{forloop.counter}}: {{ faq.question }}</button></h2>
+        <div id="collapse{{forloop.counter}}" class="accordion-collapse collapse {% if forloop.counter == 1 %} show {% endif %}" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>Answer: {{ faq.answer }}</p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>

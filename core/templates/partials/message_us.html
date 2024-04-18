@@ -1,0 +1,31 @@
+
+<div class="sub-heading">SEND US MESSAGE</div>
+
+<div class="heading-line"></div>
+
+<form action="." method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <input
+            type="text"
+            class="form-control border border-danger"
+            name="email"
+            placeholder="Enter Your Email"
+            required
+        />
+    </div>
+
+    <div class="mb-3">
+        <textarea
+            class="form-control border border-danger"
+            rows="5"
+            placeholder="Drop Us Your Message"
+            name="message"
+            required
+        ></textarea>
+    </div>
+
+    <button class="btn btn-danger">
+        <i class="bi bi-send-fill"></i> SEND
+    </button>
+</form>

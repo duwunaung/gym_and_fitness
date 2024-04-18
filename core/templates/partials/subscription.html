@@ -1,0 +1,62 @@
+<section id="plan" class="container p-5">
+  <div class="sub-heading" data-aos="fade-down" data-aos-duration="1000">PRICING TABLE</div>
+  <div class="main-heading" data-aos="fade-up" data-aos-duration="1000">Membership Plans</div>
+  <div class="heading-line" data-aos="fade-down" data-aos-duration="1000"></div>
+
+  <div class="row gy-2 align-items-center">
+    {% for subscription in subscriptions %}
+      <div class="col-lg-4 col-md-6">
+        <div 
+        class="card text-center text-light bg-dark {%if subscription.featured %}  border border-2 border-danger plan-2-card overflow-hidden {% else %} border-0 {% endif %} " 
+        data-aos= {% if forloop.counter == 1 %} "fade-up-right"  {% elif forloop.counter == 2 %} "zoom-out" {% else %} "fade-up-left" {% endif %} 
+        data-aos-duration="1000">
+          <div class="card-header">
+            <h4>$ <span class="fs-1">{{ subscription.amount }}</span></h4>
+          </div>
+
+
+          <div class="alert {% if subscription.featured %} bg-danger {% else %} bg-warning {% endif %} rounded-0">{{ subscription.title }}</div>
+          {% if subscription.featured %}
+            <div class="recommended">Recommended</div>
+          {% endif %}
+
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item bg-transparent text-light my-2 border-0 border-bottom">
+                Access to all gym facilities for {{ subscription.duration }} {{ subscription.count }}{% if subscription.duration > 1 %}s{% endif %}
+              </li>
+              {% if subscription.fitness_classes %}
+                <li class="list-group-item bg-transparent text-light my-2 border-0 border-bottom">Unlimited group fitness classes</li>
+              {% endif %}
+              {% if subscription.workout_program %}
+                <li class="list-group-item bg-transparent text-light my-2 border-0 border-bottom">
+                  Personalized workout program{% if subscription.certified_trainer %} with a certified trainer{% endif %}
+                </li>
+              {% endif %}
+              {% if subscription.health_assessment %}
+                <li class="list-group-item bg-transparent text-light my-2 border-0 border-bottom">
+                  Complimentary health assessment{% if subscription.goal_setting %}
+                    and goal-setting session
+                  {% endif %}
+                </li>
+              {% endif %}
+              {% if subscription.nutrition_consultation %}
+                <li class="list-group-item bg-transparent text-light my-2 border-0 border-bottom">
+                  Nutrition consultation{% if subscription.registered_dietitian %}
+                    with a registered dietitian
+                  {% endif %}
+                </li>
+              {% endif %}
+
+              {% if subscription.featured %}
+                <li class="list-group-item bg-transparent text-light my-2 border-0">
+                  <a href="#registerOffcanvas" data-bs-toggle="offcanvas" class="btn btn-danger">SIGN UP NOW</a>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>

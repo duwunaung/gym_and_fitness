@@ -1,0 +1,71 @@
+<footer id="footer" class="container-fluid p-5 bg-dark text-light">
+    <div class="row">
+        <div class="col-md-4 gy-5">
+            <div class="sub-heading">GYM & FITNESS</div>
+
+            <div class="heading-line"></div>
+
+            <p>
+                {{ info.info }}
+            </p>
+
+            <div>
+                <a
+                    href="{{ info.facebook }}"
+                    class="btn btn-outline-danger text-light mx-1"
+                    ><i class="bi bi-facebook"></i
+                ></a>
+
+                <a
+                    href="{{ info.instagram }}"
+                    class="btn btn-outline-danger text-light mx-1"
+                    ><i class="bi bi-instagram"></i
+                ></a>
+
+                <a
+                    href="{{ info.twitter }}"
+                    class="btn btn-outline-danger text-light mx-1"
+                    ><i class="bi bi-twitter-x"></i
+                ></a>
+
+                <a
+                    href="{{ info.tiktok }}"
+                    class="btn btn-outline-danger text-light mx-1"
+                    ><i class="bi bi-tiktok"></i
+                ></a>
+            </div>
+        </div>
+
+        <div class="col-md-4 gy-5">
+            <div class="sub-heading">QUICK CONTACT</div>
+
+            <div class="heading-line"></div>
+
+            <ul>
+                <li>
+                    <i class="bi bi-geo-alt-fill text-danger"></i>
+                    {{ info.address }}
+                </li>
+
+                <li>
+                    <i class="bi bi-telephone-fill text-danger"></i> 
+                    {{ info.phone }}
+                </li>
+
+                <li>
+                    <i class="bi bi-envelope-fill text-danger"></i>
+                    {{ info.email }}
+                </li>
+
+                <li>
+                    <i class="bi bi-globe text-danger"></i>
+                    <a href="">{{ info.website }}</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-4 gy-5">
+            {% include "partials/message_us.html" %}
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+{% include "partials/styles.html" %}
+{% endblock %}
+{% block title %}
+    Gym & Fitness
+{% endblock  %}
+
+
+{% block content %}
+
+        <!-- Start of Navigation Section -->
+        {% include "partials/nav.html" %}
+        <!-- End of Navigation Section -->
+
+        <!-- Start of Header Section -->
+        {% include "partials/header.html" %}
+        <!-- End of Header Section -->
+
+        <!-- Start of About Us Section -->
+        {% include "partials/about.html" %}
+        <!-- End of About Us Section -->
+
+        <!-- Start of Service Section -->
+        {% include "partials/services.html" %}
+        <!-- End of Service Section -->
+
+        <!-- Start of Pricing Plan Section -->
+        {% include "partials/subscription.html" %}
+        <!-- End of Pricing Plan Section -->
+
+        <!-- Start of Customer Feedback Section -->
+        {% include "partials/testimonial.html" %}
+        <!-- End of Customer Feedback Section -->
+
+        <!-- Start of News Section -->
+        {% include "partials/news.html" %}
+        <!-- End of News Section -->
+
+        <!-- Start of FAQ Section -->
+        {% include "partials/faq.html" %}
+        <!-- End of FAQ Section -->
+
+        <!-- Start of Contact Us Section -->
+        {% include "partials/contact.html" %}
+        <!-- End of Contact Us Section -->
+
+        <!-- Start of Footer Section -->
+        {% include "partials/footer.html" %}
+        <!-- End of Footer Section -->
+
+        <!-- Start of Copyright Section -->
+        <section
+            id="copyright"
+            class="container-fluid bg-dark text-light text-center p-5"
+        >
+            <p>
+                <i class="bi bi-c-circle-fill"></i> Copyright & all right
+                reserved by ThuTa YeYint
+            </p>
+        </section>
+        <!-- End of Copyright Section -->
+
+        <!-- Start of Go Top Button -->
+        <a href="#header" id="go_top"
+            ><i class="bi bi-arrow-up-square text-light"></i
+        ></a>
+        <!-- End of Go Top Button -->
+        {% include "partials/customer.html" %} 
+{% endblock  %}
+
+{% block scripts %}
+    {% include "partials/scripts.html" %}
+{% endblock %}

@@ -23,9 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-0)svasqso$n5!!@zo9+81=s!r!+9t!i2_0#nsm(!wk7u=ld%$m"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+
 
 
 # Application definition
@@ -76,10 +78,20 @@ WSGI_APPLICATION = "gym_and_fitness.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    # "default": {
+    #     "ENGINE": "django.db.backends.sqlite3",
+    #     "NAME": BASE_DIR / "db.sqlite3",
+    # }
+    
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'verceldb',                      
+        'USER': 'default',
+        'PASSWORD': '7WBqvnQf4asl',
+        'HOST': 'ep-bold-poetry-a44sx7vz-pooler.us-east-1.aws.neon.tech',
+        'PORT': '5432',
     }
+
 }
 
 
@@ -112,6 +124,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+
+STATICFILES_DIRS = [BASE_DIR/'static',]
+STATIC_ROOT = BASE_DIR/'staticfiles'
 
 MEDIA_ROOT = BASE_DIR / "uploads"
 MEDIA_URL = "/public/"
